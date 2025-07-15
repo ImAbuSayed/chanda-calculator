@@ -52,7 +52,9 @@ export default function RootLayout({
         {/* Sticky Ad Header */}
         <div className="top-0 z-50 w-full py-2">
           <div className="container mx-auto flex justify-center">
-          <script async="async" data-cfasync="false" src="//pl27176276.profitableratecpm.com/215a97eb683142b26abb90a7ebda6692/invoke.js"></script>
+
+          <script async data-cfasync="false" src="//pl27176276.profitableratecpm.com/215a97eb683142b26abb90a7ebda6692/invoke.js"></script>
+
           <div id="container-215a97eb683142b26abb90a7ebda6692"></div>
           </div>
         </div>

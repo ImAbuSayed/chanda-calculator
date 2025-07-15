@@ -121,6 +121,13 @@ export default function ChandaCalculator() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white font-sans flex flex-col items-center p-4 sm:p-6 md:p-8">
+      <div className="flex justify-center pt-8 mb-4">
+          <img 
+            src="/chanda-calculator.png" 
+            alt="Chanda Calculator Logo" 
+            className="h-24 w-auto"
+          />
+        </div>
       <h1 className="text-3xl font-bold mb-4">চাঁদা ক্যালকুলেটর</h1>
       <form onSubmit={handleSubmit} className="w-full max-w-md">
         <div className="mb-4">

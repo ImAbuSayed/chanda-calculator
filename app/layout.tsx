@@ -1,5 +1,6 @@
 import '#/styles/globals.css';
 import { Geist, Geist_Mono } from 'next/font/google';
+import Script from 'next/script';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
@@ -47,7 +48,15 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={`bg-gray-950 font-sans ${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`font-sans ${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* Sticky Ad Header */}
+        <div className="top-0 z-50 w-full py-2">
+          <div className="container mx-auto flex justify-center">
+          <script async="async" data-cfasync="false" src="//pl27176276.profitableratecpm.com/215a97eb683142b26abb90a7ebda6692/invoke.js"></script>
+          <div id="container-215a97eb683142b26abb90a7ebda6692"></div>
+          </div>
+        </div>
+        
         {children}
       </body>
     </html>

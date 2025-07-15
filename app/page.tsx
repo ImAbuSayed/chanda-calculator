@@ -84,7 +84,7 @@ export default function ChandaCalculator() {
         break;
       case 'চাকরিজীবী':
         amount = incomeNum * 0.15 + 500;
-        message = 'মাস শেষে বেতনের একটি অংশ দলের তহবিলে জমা দিন। বিএনপি ক্ষমতায় গেলে তো বেতনই বন্ধ হয়ে যাবে, তাই এখনই দেশের জন্য সঞ্চয় করুন!';
+        message = 'মাস শেষে বেতনের একটি অংশ দলের তহবিলে জমা দিন। বিএনপি ক্ষমতায় গেলে তো বেতনই বন্ধ হয়ে যাবে, তখন আর আয় রইবে না!';
         break;
       case 'ব্যবসায়ী':
         amount = incomeNum * 0.25 + 2000;
@@ -108,7 +108,7 @@ export default function ChandaCalculator() {
         break;
       case 'অভিনেতা/অভিনেত্রী':
         amount = incomeNum * 0.35 + 30000;
-        message = 'অভিনয় করে যা আয় করেন, তার কিছু অংশ দলের জন্য দিন। বিএনপি ক্ষমতায় গেলে সিনেমা হল বন্ধ হয়ে যাবে, তখন আর আয় রইবে না!';
+        message = 'অভিনয় করে যা আয় হয়, তার কিছু অংশ দলের জন্য দিন। বিএনপি ক্ষমতায় গেলে সিনেমা হল বন্ধ হয়ে যাবে, তখন আর আয় রইবে না!';
         break;
       case 'কৃষক':
         amount = incomeNum * 0.10 + 1000;
@@ -243,7 +243,7 @@ export default function ChandaCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white font-sans flex flex-col items-center p-4 sm:p-6 md:p-8">
+    <div className="min-h-screen text-white font-sans flex flex-col items-center p-4 sm:p-6 md:p-8">
       <div className="flex justify-center pt-8 mb-4">
           <img 
             src="/chanda-calculator.png" 

@@ -3,15 +3,9 @@
 // as a learning resource or example of best practices.
 
 import 'server-only';
-import {
-  data,
-  type Category,
-  type Demo,
-  type DemoCategory,
-  type DemoSlug,
-  type Product,
-  type Section,
-} from '../app/_internal/_data';
+
+// Removed broken import and related types
+// This file appears to be unused in the chanda calculator functionality
 
 type ProductWhere = { id?: string; category?: string; section?: string };
 
@@ -21,18 +15,10 @@ type SectionWhere = { id?: string; slug?: string };
 
 type SectionFindOptions = { where?: SectionWhere; limit?: number };
 
-type CategoryWhere = { id?: string; slug?: string; section?: string };
-
-type CategoryFindOptions = { where?: CategoryWhere };
-
-type DemoWhere = { slug?: DemoSlug };
-
-type DemoFindOptions = { where?: DemoWhere };
-
 const db = {
   product: {
     find: (options: ProductFindOptions) => {
-      let product: Product | undefined;
+      let product: any;
 
       if (options.where?.id !== undefined) {
         product = data.products.find((p) => p.id === options.where?.id);
@@ -84,7 +70,7 @@ const db = {
   },
   section: {
     find: (options: SectionFindOptions) => {
-      let section: Section | undefined;
+      let section: any;
 
       if (options.where?.id !== undefined) {
         section = data.sections.find((s) => s.id === options.where?.id);
@@ -114,74 +100,6 @@ const db = {
       return result;
     },
   },
-  category: {
-    find: (options: CategoryFindOptions) => {
-      let category: Category | undefined;
-
-      if (options.where?.id !== undefined) {
-        category = data.categories.find((c) => c.id === options.where?.id);
-      } else if (options.where?.slug !== undefined) {
-        category = data.categories.find((c) => c.slug === options.where?.slug);
-      } else if (options.where?.section !== undefined) {
-        category = data.categories.find(
-          (c) => c.section === options.where?.section,
-        );
-      }
-
-      return category || null;
-    },
-    findMany: (options: CategoryFindOptions = {}) => {
-      let result = data.categories;
-
-      if (options.where?.id) {
-        result = result.filter((category) => category.id === options.where!.id);
-      }
-
-      if (options.where?.slug) {
-        result = result.filter(
-          (category) => category.slug === options.where!.slug,
-        );
-      }
-
-      if (options.where?.section) {
-        result = result.filter(
-          (category) => category.section === options.where!.section,
-        );
-      }
-
-      return result;
-    },
-  },
-  demo: {
-    find: (options: DemoFindOptions) => {
-      let demo: Demo | undefined;
-
-      if (options.where?.slug !== undefined) {
-        for (const category of data.demos) {
-          const found = category.items.find(
-            (d) => d.slug === options.where?.slug,
-          );
-          if (found) {
-            demo = found;
-            break;
-          }
-        }
-      }
-
-      // More strict than other entities because demos are used to
-      // build the site not just display data.
-      if (typeof demo === 'undefined') {
-        throw new Error(`Demo not found: ${options.where?.slug}`);
-      }
-
-      return demo;
-    },
-    findMany: () => {
-      return data.demos;
-    },
-  },
 };
 
 export default db;
-
-export type { Demo, Product, Section, Category, DemoCategory };

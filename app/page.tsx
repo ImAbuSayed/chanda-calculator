@@ -428,9 +428,25 @@ export default function ChandaCalculator() {
           />
         </div>
       )}
-      <div className="mt-8 text-center text-xs text-gray-400">
-        <p>Prepared by <a href="https://abusayed.com.bd/projects/chanda-calculator" className="text-blue-300 underline">Chanda Calculator</a></p>
-        <p><sup>*</sup>This project is maintained by <a href="https://linkedin.com/in/imabusayed" className="text-blue-300 underline">Abu Sayed</a></p>
+      <div className="mt-8 text-center text-xs text-gray-400 space-y-1">
+        <p>
+          Explore our new game: 
+          <a href="https://hawa-bhaban-investment-simulator.vercel.app/" className="text-blue-300 underline ml-1">
+            Hawa Bhaban Simulator
+          </a>
+        </p>
+        <p>
+          Prepared by 
+          <a href="https://abusayed.com.bd/projects/chanda-calculator" className="text-blue-300 underline ml-1">
+            Chanda Calculator
+          </a>
+        </p>
+        <p>
+          <sup>*</sup>This project is maintained by 
+          <a href="https://linkedin.com/in/imabusayed" className="text-blue-300 underline ml-1">
+            Abu Sayed
+          </a>
+        </p>
       </div>
     </div>
   );
